@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+
+<body>
+    <table id="table">
+        <thead>
+            <th>List</th>
+            <th>Color</th>
+            <th>Scroll</th>
+        </thead>
+        <tbody>
+            <tr class="box list">
+                <td>Item 1</td>
+                <td class="red">Red</td>
+                <td rowspan="3">
+                    <div class="scroll">
+                        <ol type="a">
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                            <li>Item 4</li>
+                            <li>Item 4</li>
+                            <li>Item 4</li>
+                            <li>Item 4</li>
+                            <li>Item 4</li>
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+            <tr class="box list">
+                <td>Item 2</td>
+                <td class="yellow">Blue</td>
+            </tr>
+            <tr class="box list">
+                <td>Item 3</td>
+                <td class="green">Green</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    const table = document.querySelector("#table");
+    console.log(table)
+    table.style.width = '30%';
+    table.border = '2px';
+    table.align = 'center';
+
+    let scroll = document.querySelector(".scroll");
+    scroll.style.display = "block";
+    scroll.style.maxHeight = "100px";
+    scroll.style.overflow = "scroll";
+    document.querySelector(".red").style.background = "red";
+    document.querySelector(".yellow").style.background = "yellow";
+    document.querySelector(".green").style.background = "green";
+
+</script>
+
+</html>

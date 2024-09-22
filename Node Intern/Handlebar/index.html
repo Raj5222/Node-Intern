@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handlebars</title>
+    <style>
+        body {
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+
+        table {
+            width: 70vw;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d6d5d5;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #d2cdcd;
+            text-align: left;
+        }
+
+        button {
+            width: 50px;
+            height: 30px;
+            background-color: #d2cdcd;
+            margin: 10px;
+            border-radius: 5px;
+            border-color: #9e9c9c;
+        }
+
+        button:hover {
+            background-color: #c2bcbc;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        img {
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+            margin: 5px;
+            border: 1px solid #0e0d0d;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script id="example-template" type="text/x-handlebars-template">
+        {{#if flag.isLoggedIn}}
+        <p>Welcome back, {{flag.username}}</p>
+        {{else}}
+        <p>Please log in.</p>
+        {{/if}}
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Full Name</th>
+                    <th>Attachment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{lastname}}</td>
+                    <td>{{name}} {{lastname}}</td>
+                    <td>{{{typecheck fileurl}}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+
+    <div id="content"></div>
+    <button onclick="add()">Add</button>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+        Handlebars.registerHelper('typecheck', function (arr) {
+            let data = "";
+            // console.log(arr)
+            arr.forEach(element => {
+                const url = element.fileurl;    
+                const extension = url.split('.').at(-1).toLowerCase();
+                if (extension === "pdf") {
+                    data += `<a href="${url}" target="_blank" alt="PDF Attachment"><img src="https://img.icons8.com/?size=100&id=aBrh3QHCPxYu"></a>`;
+                } else if (extension === "mp4") {
+                    data += `<a href="${url}" target="_blank" alt="MP4 Attachment"><img src="https://img.icons8.com/?size=100&id=nttYek24fZIe"></a>`;
+                } else if (extension === "mp3") {
+                    data += `<a href="${url}" target="_blank" alt="MP3 Attachment"><img src="https://img.icons8.com/?size=100&id=1555"></a>`;
+                } else if (extension === "jpg" || extension === "jpeg") {
+                    data += `<a href="${url}" target="_blank" alt="JPG Attachment"><img src="${url}"></a>`;
+                } else {
+                    data += `<img src="File Not Supported">`
+                }
+            });
+            return data;
+        });
+
+
+        let context = {
+            users: [
+                {
+                    name: "Raj",
+                    lastname: "Sathvara",
+                    fileurl: [  
+                        { fileurl: "https://png.pngtree.com/thumb_back/fh260/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg" },
+                        { fileurl: "https://icseindia.org/document/sample.pdf" },
+                        {fileurl: "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg" },
+                        { fileurl: "https://file-examples.com/storage/feaf6fc38466e98369950a4/2017/04/file_example_MP4_480_1_5MG.mp4" },
+                        { fileurl: "https://file-examples.com/storage/feaf6fc38466e98369950a4/2017/11/file_example_MP3_700KB.mp3" }
+                    ]
+                },
+                {
+                    name: "Tushar",
+                    lastname: "Jain",
+                    fileurl: [
+                        { fileurl: "https://png.pngtree.com/thumb_back/fh260/background/20230817/pngtree-lotus-flower-jpg-pink-lotus-flower-image_13023952.jpg" },
+                        { fileurl: "https://file-examples.com/storage/feaf6fc38466e98369950a4/2017/04/file_example_MP4_480_1_5MG.mp4" },
+                        { fileurl: "https://icseindia.org/document/sample.pdf" },
+                    ]
+                }
+            ],
+            flag: { isLoggedIn: true, username: 'Raj' }
+        };
+
+        function render() {
+            const source = document.getElementById('example-template').textContent;
+            const template = Handlebars.compile(source);
+            const html = template(context);
+            document.getElementById('content').innerHTML = html;
+        }
+        render()
+
+        function add() {
+            let addname = prompt("Enter Name").trim();
+            let addlastname = prompt("Enter Last Name").trim();
+            let newfileurl = prompt("Enter File URL").trim();
+            if (addname && addlastname && newfileurl) {
+                context.users.push({ name: addname, lastname: addlastname, fileurl:[{fileurl:newfileurl}]});
+                render();
+            }
+        }
+
+        // function addImage() {
+        //     const files = document.getElementById('Upload').files;
+        //     const validTypes = ["jpg", "png", "svg", "jpeg"];
+        //     const pretypeIcons = {
+        //         pdf: "https://img.icons8.com/?size=100&id=aBrh3QHCPxYu&format=png&color=000000",
+        //         txt: "https://img.icons8.com/?size=100&id=2290&format=png&color=000000",
+        //         mp3: "https://img.icons8.com/?size=100&id=1555&format=png&color=000000",
+        //         mp4: "https://img.icons8.com/?size=100&id=nttYek24fZIe&format=png&color=000000",
+        //         mkv: "https://img.icons8.com/?size=100&id=32237&format=png&color=000000"
+        //     };
+        //     const file = files[0];
+        //     const fileType = file.type.split('/')[1].toLowerCase();
+        //     const fileExtension = file.name.split('.').pop().toLowerCase();
+
+        //     if (validTypes.includes(fileType) || validTypes.includes(fileExtension)) {
+        //         const reader = new FileReader();
+        //         reader.onload = function (e) {
+        //             context.images.push(e.target.result);
+        //             const read = document.getElementById('image').innerHTML
+        //             document.getElementById('image').innerHTML = read + `<img src="${e.target.result}" alt="Uploaded Image" />`;
+        //         };
+        //         reader.readAsDataURL(file);
+        //     } else if (Object.keys(pretypeIcons).includes(fileType) || Object.keys(pretypeIcons).includes(fileExtension)) {
+        //         context.othertype.flag = true;
+                // context.othertype.fileurl = URL.createObjectURL(file);
+        //         context.othertype.typeimage = pretypeIcons[fileType] || pretypeIcons[fileExtension];
+        //         const read = document.getElementById('image').innerHTML
+        //         document.getElementById('image').innerHTML = read + `<a href="${URL.createObjectURL(file)}" target="_blank"><img src="${pretypeIcons[fileType] || pretypeIcons[fileExtension]}"></a>`;
+        //     } else {
+        //         alert("File is not a valid type.");
+        //     }
+        // }
+        // render();
+    </script>
+</body>
+
+</html>

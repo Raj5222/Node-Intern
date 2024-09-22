@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #dcdddf;
+        }
+@media only screen and (min-width: 600px) {
+        .container {
+            padding: 25px;
+            max-height: 85vh;
+            min-width: 80vw;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow-y: scroll;
+        }
+}
+
+@media only screen and (max-width: 600px) {
+        .container {
+            padding: 25px;
+            max-height: 85vh;
+            min-width: 80vw;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow-y: scroll;
+        }
+    }
+        thead {
+            background-color: rgb(177, 177, 166);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgb(194, 210, 210);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        .removeSubjectButton {
+            margin: 2px;
+        }
+        .subjectInput{
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 align="center">Crud App</h1>
+        <form id="studentForm">
+            <div id="formControls" style="display: none;">
+                <label for="studentName">Name </label>
+                <input type="text" id="studentName" placeholder="Student Name" required>
+                <div id="subjects">
+                    <!-- Dynamic Subjects Add Here -->
+                </div>
+                <button type="submit" id="submit-button">Submit</button>
+            </div><br>
+            <button type="button" id="addSubjectButton">Add</button>
+        </form>
+
+
+        <br>
+        <label for="searchInput">Search </label>
+        <input type="text" id="searchInput" placeholder="Search name or subject" onkeyup="find()">
+        <br><br>
+        <table border="2" id="studentTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subjects</th>
+                    <th>Percentage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        localStorage.clear();
+        const form = document.getElementById('studentForm');
+        const studentTable = document.getElementById('tbody');
+        const studentNameInput = document.getElementById('studentName');
+        const subjectsContainer = document.getElementById('subjects');
+        const addSubjectButton = document.getElementById('addSubjectButton');
+        const formControls = document.getElementById('formControls');
+        const searchInput = document.getElementById('searchInput');
+
+        let students = JSON.parse(localStorage.getItem('students')) || [];
+        let editingIndex = -1;
+        let subjectCount = 0;
+
+        function calculatePercentage(subjects) {
+            const scores = subjects.map(subject => Number(subject.score));
+            const total = scores.reduce((sum, score) => sum + score, 0);
+            const maxPossibleScore = subjects.length * 100;
+            return ((total / maxPossibleScore) * 100).toFixed(2);
+        }
+
+
+        function addSubjectField() {
+            subjectCount++;
+            const subjectDiv = document.createElement('div');
+            subjectDiv.className = 'subjectField';
+            subjectDiv.dataset.index = subjectCount;
+
+            subjectDiv.innerHTML = `
+            <input type="text" class="subjectInput" data-subject-name="Subject ${subjectCount}" placeholder="Enter Subject Name" required>
+            <input type="number" class="subjectInput" placeholder="Enter Subject Code" required>
+            <input type="number" class="subjectInput" min=0 max=100 placeholder="Enter Subject Marks" required>
+            <button type="button" class="removeSubjectButton" onclick="removeSubjectField(this)">Remove</button>
+        `;
+
+            subjectsContainer.appendChild(subjectDiv);
+            formControls.style.display = 'block'; //Show Name Text Box.
+            addSubjectButton.textContent = "Add Subject" //Add Btn Name Change To Add Subject.
+        }
+
+        function removeSubjectField(button) {
+            console.log(button)
+            button.parentElement.remove();
+            if (subjectsContainer.children.length === 0) {
+                formControls.style.display = 'none'; // Hide Name Text Box
+                addSubjectButton.textContent = "Add"; //Add Subject Btn Name Change To Add.
+            }
+        }
+
+        addSubjectButton.addEventListener('click', addSubjectField);
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const studentName = studentNameInput.value.trim();
+            const subjectInputs = Array.from(document.querySelectorAll('.subjectField')).map(field => {
+                const inputs = field.querySelectorAll('.subjectInput');
+                return {
+                    subjectname: inputs[0].value,
+                    subjectcode: inputs[1].value,
+                    score: inputs[2].value
+                };
+            });
+
+            const studentPercentage = calculatePercentage(subjectInputs);
+
+            if (editingIndex === -1) {
+                students.push({
+                    name: studentName,
+                    subjects: subjectInputs,
+                    percentage: studentPercentage
+                });
+            } else {
+                students[editingIndex] = {
+                    name: studentName,
+                    subjects: subjectInputs,
+                    percentage: studentPercentage
+                };
+                editingIndex = -1;
+            }
+
+            localStorage.setItem('students', JSON.stringify(students));
+            result();
+            form.reset();
+            subjectsContainer.innerHTML = ''; // Clear subjects after submit
+            formControls.style.display = 'none'; // Hide form controls after submit
+            addSubjectButton.textContent = "Add"
+            subjectCount = 0; // Reset subject counter
+        });
+
+        searchInput.addEventListener('keyup', () => result(searchInput.value));
+
+        function result(query = '') {
+            studentTable.innerHTML = '';
+
+            const filteredStudents = students.filter(student => {
+                return student.name.toLowerCase().includes(query.toLowerCase()) ||
+                    student.subjects.some(subject => {
+                        return subject.score.toString().toLowerCase().includes(query.toLowerCase()) ||
+                            subject.subjectname.toLowerCase().includes(query.toLowerCase());
+                    });
+            });
+
+            filteredStudents.forEach((student, index) => {
+                const row = studentTable.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+                const cell4 = row.insertCell(3);
+
+                cell1.innerHTML = `<input type="checkbox" class="task-checkbox" data-index="${index}"> ${student.name}`;
+                cell2.innerHTML = student.subjects
+                    .map(subject => `${subject.subjectname} (${subject.subjectcode}) : ${subject.score}`)
+                    .join('<br>');
+                cell3.textContent = student.percentage;
+                cell4.innerHTML = `
+                <button class="edit-btn" data-index="${index}">Edit</button>
+                <button class="delete-btn" data-index="${index}" disabled>Delete</button>
+            `;
+            });
+
+            document.querySelectorAll('.edit-btn').forEach(button => {
+                button.addEventListener('click', () => editStudent(button.dataset.index));
+            });
+
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', () => deleteStudent(button.dataset.index));
+            });
+
+            document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    const deleteButton = document.querySelector(`.delete-btn[data-index="${checkbox.dataset.index}"]`);
+                    deleteButton.disabled = !checkbox.checked;
+                });
+            });
+        }
+
+        function editStudent(index) {
+            editingIndex = index;
+            const student = students[index];
+            studentNameInput.value = student.name;
+            subjectsContainer.innerHTML = ''; // Clear existing subjects
+
+            student.subjects.forEach((subject, i) => {
+                subjectCount++;
+                const subjectDiv = document.createElement('div');
+                subjectDiv.className = 'subjectField';
+                subjectDiv.dataset.index = subjectCount;
+
+                subjectDiv.innerHTML = `
+                <input type="text" class="subjectInput" data-subject-name="Subject ${i + 1}" value="${subject.subjectname}" placeholder="Enter Subject Name">
+                <input type="number" class="subjectInput" value="${subject.subjectcode}" placeholder="Enter Subject Code">
+                <input type="number" class="subjectInput" value="${subject.score}" placeholder="Enter Subject Marks">
+                <button type="button" class="removeSubjectButton" onclick="removeSubjectField(this)">Remove</button>
+            `;
+
+                subjectsContainer.appendChild(subjectDiv);
+            });
+
+            formControls.style.display = 'block'; // Show form controls when editing
+        }
+
+        function deleteStudent(index) {
+            students.splice(index, 1);
+            localStorage.setItem('students', JSON.stringify(students));
+            result(searchInput.value);
+        }
+
+        function init() {
+            if (!students.length) {
+                students = [
+                    {
+                        name: "Raj",
+                        subjects: [
+                            { subjectname: "Maths", subjectcode: "001", score: 76 },
+                            { subjectname: "CN", subjectcode: "002", score: 89 },
+                            { subjectname: "DSA", subjectcode: "003", score: 91 },
+                            { subjectname: "Projects", subjectcode: "004", score: 90 }
+                        ]
+                    },
+                    {
+                        name: "Manan",
+                        subjects: [
+                            { subjectname: "Maths", subjectcode: "001", score: 56 },
+                            { subjectname: "CN", subjectcode: "002", score: 80 },
+                            { subjectname: "DSA", subjectcode: "003", score: 65 },
+                            { subjectname: "Projects", subjectcode: "004", score: 89 }
+                        ]
+                    }
+                ];
+                localStorage.setItem('students', JSON.stringify(students));
+            }
+        }
+
+        // init();
+        result();
+    </script>
+
+
+</body>
+
+</html>

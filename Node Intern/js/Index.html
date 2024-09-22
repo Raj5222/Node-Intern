@@ -1,0 +1,131 @@
+<!DOCTYPE htm>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <button id="abc">Button</button>
+</body>
+<script>
+    // let y = {a:"abc",b:"bca",c:"cab"}
+    // let x = ["a","b","c"]
+    // let pattern = /abca/
+    // console.log("Type of RegExe :- ",typeof pattern)
+    // console.log(y.a)
+    // global = window
+    // console.log(global)
+    // let x = 100;
+    // x**=2
+    // console.log(x);
+
+        // let user;
+        // let defaultName = 'Guest';
+        // let ayz = "abc"
+        // let name = user ?? ayz ?? defaultName;
+        // console.log(name)
+
+        // let user = {
+        //         profile: {
+        //             address: {
+        //                 city: 'Ahmedabad'
+        //             }
+        //         }
+        //     };
+
+        //     let city = user.profile?.address?.city;
+        //     let zipCode = user.profile?.address?.zipCode;
+
+        //     console.log(city);
+        //     console.log(zipCode)
+
+        // let arr1 = [1,2,3];
+        // let arr2 = [...arr1, 4, 5];
+        // console.log(arr2)
+        
+        // let arr1 = {1:"abc", 2:"abc2", 3:"abc3"};
+        // let arr2 = {...arr1, 4:"ab4", 5:"abc5"};
+        // console.log(arr2)
+        
+        // let x = (1, 2, 3, 4);
+        // console.log(x)
+
+        // let arr1 = {abc:"1",abc2:"2",abc3:"3",abc4:"4",abc5:"1"}
+        // function sum({abc,abc2, ...numbersn}) {
+        //     console.log(abc)
+        //     console.log(abc2)
+        //     console.log(numbersn)
+        // }
+        //     sum (arr1);
+
+        // let  {a,d,...c}  = {a:100,b:200,x:300,d:400};
+        // console.log(c)
+
+    //ES14
+        // const array = [1, 2, 3, 3, 4, 5, 12];
+        //     const index = array.findLast(element => element % 2 === 0);
+        // const array = [1, 2, 3, 4, 5];
+        //     const index = array.findLastIndex(element => element % 2 === 0);
+            // console.log(index)
+
+        // async function myFunction() {
+        //         let arr = [10, 2, 3, 4]
+        //         return Promise.resolve("Hello");
+        //     }
+        //     let x = myFunction()
+        //     x.then(console.log((data, b, c) => console.log("Data : ", data)))
+
+
+        // const promise1 = new Promise((resolve) => setTimeout(() => resolve("First"), 1000));
+        //     const promise2 = new Promise((resolve) => setTimeout(() => resolve("Second"), 2000));
+
+        //     Promise.race([promise1, promise2])
+        //         .then((result) => {
+        //             console.log(result);
+        //         });
+
+        //  function fn2() {
+        //     let a = "hello"
+        //         document.getElementById("abc").addEventListener('click', () => {
+        //             console.log(a);
+        //         });
+        //     }
+
+        //     // Ensure the function runs after the DOM content is loaded
+        //     document.addEventListener('DOMContentLoaded', fn2);
+
+
+
+        
+    const matrix = [
+        [1, [2, 3],
+            [4, 5], 6, ["Hello"]],
+        [7, 8, 9, [10, 11, [12, [13, 14]], ["Hello1", ["Hello2"]]]]
+    ];
+
+    function tot(mat) {
+        mat.forEach((element) => {
+            if (typeof element === 'number') {
+                single.push(element);
+                total += element;
+            } else if (typeof element === 'string') {
+                single.push(element);
+            }
+            else if (Array.isArray(element)) {
+                tot(element);
+            }
+            else {
+                console.log("Not Valid.")
+            }
+        });
+    }
+
+    let single = [];
+    let total = 0;
+    tot(matrix);
+    console.log("Total : ", total, '\nArray : ', single);
+
+
+</script>
+</html>

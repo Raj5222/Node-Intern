@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student CRUD</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="studentForm">
+            <input type="text" id="studentName" placeholder="Student Name" required>
+            <div id="subjects">
+                <input type="number" class="subjectInput" id="subjectMaths" placeholder="Maths">
+                <input type="number" class="subjectInput" id="subjectCN" placeholder="CN">
+                <input type="number" class="subjectInput" id="subjectDSA" placeholder="DSA">
+                <input type="number" class="subjectInput" id="subjectProjects" placeholder="Projects">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+
+        <input type="text" id="searchInput" placeholder="Search name or subject">
+        <input type="button" onclick="find()" value="Find">
+        <br><br>
+        <table border="2" id="studentTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subjects</th>
+                    <th>Percentage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+                localStorage.clear();
+
+                    const form = document.getElementById('studentForm');
+                    const studentTable = document.getElementById('tbody');
+                    const studentNameInput = document.getElementById('studentName');
+                    const searchInput = document.getElementById('searchInput');
+                    const subjectInputs = document.querySelectorAll('.subjectInput');
+
+                    let students = JSON.parse(localStorage.getItem('students')) || [];
+                    let editingIndex = -1;
+
+                    function calculatePercentage(subjects) {
+                        const scores = subjects.map(subject => Number(subject.score));
+                        const total = scores.reduce((sum, score) => sum + score, 0);
+                        const maxPossibleScore = subjects.length * 100;
+                        return ((total / maxPossibleScore) * 100).toFixed(2);
+                    }
+
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault();
+                        const studentName = studentNameInput.value;
+                        const subjects = [
+                            { subjectname: "Maths", subjectcode: "ID-001", score: document.getElementById('subjectMaths').value },
+                            { subjectname: "CN", subjectcode: "ID-002", score: document.getElementById('subjectCN').value },
+                            { subjectname: "DSA", subjectcode: "ID-003", score: document.getElementById('subjectDSA').value },
+                            { subjectname: "Projects", subjectcode: "ID-004", score: document.getElementById('subjectProjects').value }
+                        ];
+
+                        const studentPercentage = calculatePercentage(subjects);
+
+                        if (editingIndex === -1) {
+                            students.push({
+                                name: studentName,
+                                subjects: subjects,
+                                percentage: studentPercentage
+                            });
+                        } else {
+                            students[editingIndex] = {
+                                name: studentName,
+                                subjects: subjects,
+                                percentage: studentPercentage
+                            };
+                            editingIndex = -1;
+                        }
+
+                        localStorage.setItem('students', JSON.stringify(students));
+                        result();
+                        form.reset();
+                    });
+
+                    function result(query = '') {
+                        studentTable.innerHTML = '';
+
+                        const filteredStudents = students.filter(student =>
+                            student.name.toLowerCase().includes(query.toLowerCase()) ||
+                            student.subjects.some(subject => {
+                                const score = subject.score.toString().toLowerCase();
+                                return score.includes(query.toLowerCase()) || subject.subjectname.toLowerCase().includes(query.toLowerCase());
+                            })
+                        );
+
+                        filteredStudents.forEach((student, index) => {
+                            const row = studentTable.insertRow();
+                            const cell1 = row.insertCell(0);
+                            const cell2 = row.insertCell(1);
+                            const cell3 = row.insertCell(2);
+                            const cell4 = row.insertCell(3);
+
+                            cell1.textContent = student.name;
+                            cell2.textContent = student.subjects
+                                .map(subject => `${subject.subjectname} : ${subject.score}`)
+                                .join(',\n');
+                            cell3.textContent = calculatePercentage(student.subjects);
+                            cell4.innerHTML = `
+                    <button onclick="editStudent(${index})">Edit</button>
+                    <button onclick="deleteStudent(${index})">Delete</button>
+                `;
+                        });
+                    }
+
+                    window.editStudent = function (index) {
+                        editingIndex = index;
+                        const student = students[index];
+                        studentNameInput.value = student.name;
+                        student.subjects.forEach(subject => {
+                            document.getElementById(`subject${subject.subjectname}`).value = subject.score;
+                        });
+                    };
+
+                    function deleteStudent(index) {
+                        students.splice(index, 1);
+                        localStorage.setItem('students', JSON.stringify(students));
+                        result(searchInput.value);
+                    }
+
+                    function find() {
+                        result(searchInput.value);
+                    }
+
+                    function init() {
+                        if (!students.length) {
+                            students = [
+                                {
+                                    name: "Raj",
+                                    subjects: [
+                                        { subjectname: "Maths", subjectcode: "ID-001", score: 76 },
+                                        { subjectname: "CN", subjectcode: "ID-002", score: 89 },
+                                        { subjectname: "DSA", subjectcode: "ID-003", score: 91 },
+                                        { subjectname: "Projects", subjectcode: "ID-004", score: 90 }
+                                    ]
+                                },
+                                {
+                                    name: "Manan",
+                                    subjects: [
+                                        { subjectname: "Maths", subjectcode: "ID-001", score: 56 },
+                                        { subjectname: "CN", subjectcode: "ID-002", score: 80 },
+                                        { subjectname: "DSA", subjectcode: "ID-003", score: 65 },
+                                        { subjectname: "Projects", subjectcode: "ID-004", score: 89 }
+                                    ]
+                                }
+                            ];
+                            localStorage.setItem('students', JSON.stringify(students));
+                        }
+                    }
+
+                    init();
+                    result();
+    </script>
+</body>
+
+</html>

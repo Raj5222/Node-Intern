@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "name": "Rose",
+        "description": "The rose is one of the most iconic flowers, known for its elegance and beauty. Often associated with love and romance, roses come in a variety of colors, each symbolizing different emotions. The delicate petals of a rose can range from deep reds to soft pinks, bright yellows, and pure whites. Roses are often used in bouquets, perfumes, and as ornamental plants in gardens. Their rich fragrance and classic appearance make them a timeless favorite in floral arrangements. The rose’s history dates back thousands of years, and it has been a symbol of love, beauty, and grace across many cultures.",
+        "image_url": "https://images.unsplash.com/photo-1530092285049-1c42085fd395?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 2,
+        "name": "Tulip",
+        "description": "Tulips are vibrant, cup-shaped flowers that come in a wide range of colors including red, pink, yellow, and white. They are one of the most popular spring flowers, blooming in the early days of spring with a fresh, bright appearance. Tulips are known for their simple yet elegant petals that open wide in the sun, creating a stunning visual effect. They symbolize perfect love and are often used in floral arrangements and garden beds. Tulips originated in Central Asia and were cultivated in the Ottoman Empire before spreading to Europe, where they became highly prized during the 'Tulip Mania' in the 17th century.",
+        "image_url": "https://images.unsplash.com/photo-1483519396903-1ef292f4974a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 3,
+        "name": "Sunflower",
+        "description": "Sunflowers are known for their large, bright yellow petals and tall, sturdy stems. They are often associated with happiness and positivity due to their bright appearance and tendency to turn towards the sun. Sunflowers can grow up to 10 feet tall and their heads can be as large as 12 inches in diameter. They are native to the Americas and were first domesticated by Native American cultures. Today, sunflowers are popular not only for their beauty but also for their seeds, which are used in a variety of culinary applications and for producing sunflower oil.",
+        "image_url": "https://images.unsplash.com/photo-1554486840-db3a33d9318e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 4,
+        "name": "Lily",
+        "description": "Lilies are elegant and fragrant flowers that come in a variety of colors including white, pink, orange, and red. Known for their trumpet-shaped blooms and striking appearance, lilies are often used in wedding bouquets and floral arrangements. They symbolize purity, refined beauty, and transience. Lilies have been cultivated since ancient times and have symbolic significance in many cultures. They are commonly associated with funerals and memorials as a symbol of the restored innocence of the soul. Lilies grow from bulbs and require well-drained soil to thrive.",
+        "image_url": "https://images.unsplash.com/photo-1491918434088-6a06cd4254ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 5,
+        "name": "Orchid",
+        "description": "Orchids are a diverse and widespread family of flowering plants with blooms that are often colorful and fragrant. They are renowned for their complex and unique flower structures and are one of the largest families of flowering plants. Orchids come in a variety of shapes and sizes, from tiny blooms to large, showy flowers. They symbolize beauty, strength, and love. Orchids are found in various habitats around the world, from tropical rainforests to temperate zones. They are also popular as houseplants due to their exotic appearance and longevity.",
+        "image_url": "https://images.unsplash.com/photo-1467928675332-ff87f8017246?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 6,
+        "name": "Daisy",
+        "description": "Daisies are charming and cheerful flowers characterized by their white petals and yellow centers. They are often associated with innocence, purity, and new beginnings. Daisies are hardy plants that thrive in a variety of conditions and are frequently seen in gardens and wildflower meadows. The classic daisy consists of a central disk of yellow florets surrounded by white petal-like rays. In addition to their beauty, daisies are also used in traditional medicine for their potential healing properties and are a symbol of hope and renewal.",
+        "image_url": "https://images.unsplash.com/photo-1492116837775-ddf9550b9546?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 7,
+        "name": "Peony",
+        "description": "Peonies are lush, fragrant flowers known for their large, full blooms and wide range of colors including pink, white, and red. They are often used in wedding bouquets and floral arrangements due to their romantic appearance. Peonies symbolize prosperity, good fortune, and romance. They are native to Europe, Asia, and North America and have been cultivated for centuries both for their beauty and medicinal properties. Peonies grow best in well-drained soil and require a period of winter chill to thrive.",
+        "image_url": "https://images.unsplash.com/photo-1536497769043-a9f3e5d3ffa5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 8,
+        "name": "Hydrangea",
+        "description": "Hydrangeas are known for their large, rounded clusters of flowers that can range in color from blue to pink to white, depending on the pH of the soil. They are popular garden plants and are often used in floral arrangements due to their dramatic, showy blooms. Hydrangeas symbolize understanding, heartfelt emotion, and gratitude. Originating from Asia and the Americas, they are adaptable to a range of climates but prefer well-drained soil and partial shade. Their blooms are long-lasting and can change color over time.",
+        "image_url": "https://images.unsplash.com/photo-1536497769043-a9f3e5d3ffa5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "id": 9,
+        "name": "Lily of the Valley",
+        "description": "Lily of the Valley is a delicate, fragrant flower known for its small, bell-shaped blooms that hang in clusters. It has a sweet, subtle fragrance and is often used in perfumes and bouquets. This flower is associated with purity, humility, and a return to happiness. Native to Europe and Asia, Lily of the Valley grows well in shady, moist environments and is often found in woodland areas. It has a long history of use in traditional medicine and is a symbol of good luck and renewal.",
+        "image_url": "https://images.unsplash.com/photo-1492149437369-1d51574055cb?w=600&auto=format&fit=crop&q=60& "
+    },
+    {
+        "id": 10,
+        "name": "Marigold",
+        "description": "Marigolds are vibrant flowers known for their bright yellow, orange, and red hues. They are often used in garden beds and as ornamental plants due to their bold color and hardy nature. Marigolds symbolize warmth, creativity, and positive energy. They are native to the Americas and have been used in various cultures for their medicinal properties and in traditional festivals. Marigolds thrive in sunny locations and well-drained soil, and their long blooming period makes them a popular choice for gardeners.",
+        "image_url": "https://images.unsplash.com/photo-1541093113199-a2e9d84e903f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTZ8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 11,
+        "name": "Gerbera Daisy",
+        "description": "Gerbera daisies are known for their large, vibrant blooms that come in a variety of colors including red, pink, orange, and yellow. They are popular in floral arrangements due to their bold, cheerful appearance. Gerbera daisies symbolize beauty, innocence, and purity. They are native to South Africa and are a favorite in gardens and as cut flowers. These daisies require plenty of sunlight and well-drained soil to thrive, making them a bright addition to any garden or bouquet.",
+        "image_url": "https://images.unsplash.com/photo-1487528742387-d53d4f12488d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 12,
+        "name": "Calla Lily",
+        "description": "Calla lilies are elegant flowers known for their distinctive trumpet shape and smooth, sleek petals. They come in various colors including white, pink, yellow, and purple. Calla lilies symbolize magnificence, beauty, and purity. They are often used in wedding bouquets and formal floral arrangements due to their sophisticated appearance. Native to southern Africa, calla lilies grow best in well-drained soil and require moderate watering. They are a favorite for their dramatic, graceful blooms and long-lasting beauty.",
+        "image_url": "https://images.unsplash.com/photo-1576857990591-aad2585f34d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTd8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 13,
+        "name": "Zinnia",
+        "description": "Zinnias are colorful flowers that come in a range of vibrant hues including red, pink, orange, and yellow. They are known for their long-lasting blooms and hardy nature, making them a popular choice for garden beds and borders. Zinnias symbolize endurance, lasting affection, and constancy. Native to Mexico, they thrive in sunny conditions and well-drained soil. Zinnias are appreciated for their ability to attract butterflies and their bright, cheerful appearance throughout the growing season.",
+        "image_url": "https://images.unsplash.com/photo-1493625926644-63185e3d4e15?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTV8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 14,
+        "name": "Poppy",
+        "description": "Poppies are striking flowers known for their vibrant colors and delicate petals. They are commonly found in shades of red, orange, pink, and white. Poppies are symbols of remembrance and peace, often associated with the memorialization of soldiers. They have a rich history in various cultures and are used in traditional medicine as well. Native to Europe and Asia, poppies thrive in full sun and well-drained soil. Their ephemeral blooms are celebrated for their beauty and elegance.",
+        "image_url": "https://images.unsplash.com/photo-1492662255087-d9e0dee2a572?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTh8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 15,
+        "name": "Chrysanthemum",
+        "description": "Chrysanthemums, often referred to as mums, are popular flowers known for their diverse range of colors and intricate petal structures. They are commonly found in hues of yellow, red, pink, and white. In many cultures, chrysanthemums symbolize longevity, happiness, and abundance. Native to Asia and northeastern Europe, chrysanthemums are often used in autumnal floral displays and as ornamental plants in gardens. They thrive in cooler temperatures and can last for several weeks in floral arrangements.",
+        "image_url": "https://images.unsplash.com/photo-1521052424247-a1a47c7de691?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjV8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 16,
+        "name": "Sweet Pea",
+        "description": "Sweet peas are fragrant, delicate flowers with a charming appearance. They are often found in shades of pink, purple, white, and red. Sweet peas are known for their lovely scent and graceful, sweeping petals. They symbolize blissful pleasure and are often used in floral arrangements and bouquets. Native to the Mediterranean region, sweet peas are popular in gardens and require a sunny spot with well-drained soil. They are appreciated for their beauty and ability to attract pollinators.",
+        "image_url": "https://images.unsplash.com/photo-1503796964332-e25e282e390f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjN8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 17,
+        "name": "Clematis",
+        "description": "Clematis is a versatile flowering vine known for its large, dramatic blooms and wide range of colors. These flowers can be found in shades of purple, pink, red, and white. Clematis are often used to cover trellises and arbors, adding a touch of elegance and beauty to gardens. They symbolize mental beauty and ingenuity. Native to various regions, clematis thrive in well-drained soil and can adapt to a variety of climates. Their stunning flowers and climbing habit make them a favorite among gardeners.",
+        "image_url": "https://images.unsplash.com/photo-1518687101634-fc4c00e0030f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mjl8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 18,
+        "name": "Carnation",
+        "description": "Carnations are classic flowers known for their frilled petals and wide range of colors, including pink, red, white, and purple. They are often used in floral arrangements and bouquets due to their long-lasting blooms and rich fragrance. Carnations symbolize love, admiration, and distinction. Native to the Mediterranean region, carnations are hardy plants that thrive in sunny locations and well-drained soil. Their versatility and beauty make them a popular choice for various occasions and settings.",
+        "image_url": "https://images.unsplash.com/photo-1526635750528-1fc147d5dfed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MzV8fHxlbnwwfHx8fHw%3D"
+    },
+    {
+        "id": 19,
+        "name": "Hydrangea",
+        "description": "Hydrangeas are renowned for their large, rounded clusters of flowers that can change color based on soil pH. These plants produce blooms in shades of blue, pink, and white, making them a popular choice for garden landscapes and floral arrangements. Hydrangeas symbolize understanding, heartfelt emotion, and gratitude. They are native to Asia and the Americas and require a well-drained soil with moderate watering. Their long-lasting blooms and color-changing capabilities make them a striking addition to any garden.",
+        "image_url": "https://images.pexels.com/photos/53141/rose-red-blossom-bloom-53141.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 20,
+        "name": "Cosmos",
+        "description": "Cosmos flowers are known for their delicate, daisy-like blooms and vibrant colors, which include shades of pink, white, and orange. They are popular in garden beds and wildflower meadows due to their easy-care nature and cheerful appearance. Cosmos symbolize harmony and order. Native to Mexico, these flowers thrive in sunny environments and well-drained soil. They attract pollinators such as butterflies and bees, making them a great addition to any garden or floral arrangement.",
+        "image_url": "https://images.pexels.com/photos/128868/thimble-common-foxglove-digitalis-purpurea-cinquefoil-128868.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 21,
+        "name": "Snapdragon",
+        "description": "Snapdragons are known for their unique, dragon-shaped blooms that come in a wide range of colors including red, pink, yellow, and white. They are popular in floral arrangements and garden beds due to their vibrant colors and tall, stately spikes. Snapdragons symbolize strength and grace. Native to the Mediterranean region, these flowers thrive in cooler temperatures and well-drained soil. They add a touch of vertical interest to garden designs and are loved for their charming appearance.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 22,
+        "name": "Amaryllis",
+        "description": "Amaryllis is a striking flower known for its large, trumpet-shaped blooms and bold colors, including red, pink, and white. It is often used as a winter holiday decoration due to its bright, festive appearance. Amaryllis symbolizes pride and determination. Native to tropical regions of South America, this flower grows from bulbs and thrives in bright, indirect light and well-drained soil. Its dramatic blooms and ability to brighten indoor spaces make it a favorite among flower enthusiasts.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 23,
+        "name": "Bougainvillea",
+        "description": "Bougainvilleas are vibrant, tropical plants known for their colorful bracts that surround small, inconspicuous flowers. These bracts come in shades of pink, purple, red, and orange, creating a stunning display of color. Bougainvilleas symbolize passion and resilience. Native to South America, they thrive in warm climates with plenty of sunlight. Bougainvilleas are often used as ornamental plants in gardens and landscapes, adding a touch of tropical flair and vibrant color.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 24,
+        "name": "Jasmine",
+        "description": "Jasmine is a fragrant flowering plant known for its small, white or yellow blooms that exude a sweet, heady scent. It is often used in perfumes and as a decorative plant in gardens. Jasmine symbolizes love, beauty, and sensuality. Native to tropical and subtropical regions, jasmine plants thrive in warm climates with plenty of sunlight. They are also valued for their use in traditional medicine and as a symbol of purity and grace.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 25,
+        "name": "Wisteria",
+        "description": "Wisteria is a dramatic flowering plant known for its cascading clusters of fragrant blooms in shades of purple, blue, and white. It is often used to cover trellises and arbors, creating a stunning display of color and fragrance. Wisteria symbolizes abundance and grace. Native to Asia and the Americas, wisteria plants thrive in sunny locations and well-drained soil. Their spectacular blooms and climbing habit make them a favorite for creating beautiful garden features and adding vertical interest.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 26,
+        "name": "Primrose",
+        "description": "Primroses are early-blooming flowers known for their bright, cheerful colors, which include shades of yellow, pink, and purple. They are often among the first flowers to bloom in spring, bringing a touch of color to gardens and landscapes. Primroses symbolize renewal and youth. Native to Europe and Asia, they thrive in cool, moist environments and well-drained soil. Their ability to bloom early in the season and their vibrant colors make them a popular choice for spring gardens.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 27,
+        "name": "Hibiscus",
+        "description": "Hibiscus is a tropical flowering plant known for its large, showy blooms that come in a variety of colors, including red, pink, yellow, and orange. The flowers are often used in Hawaiian leis and are a symbol of beauty and the exotic. Hibiscus plants are native to tropical and subtropical regions and thrive in warm, sunny environments. They are appreciated for their vibrant colors and ability to attract pollinators such as hummingbirds and butterflies.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 28,
+        "name": "Lobelia",
+        "description": "Lobelia is a trailing plant known for its small, vibrant blue or purple flowers. It is often used in hanging baskets and container gardens due to its cascading growth habit. Lobelia symbolizes love and compassion. Native to Africa and the Americas, lobelia plants thrive in cool, shady locations with well-drained soil. Their bright flowers and trailing nature make them an attractive addition to garden designs and floral arrangements.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 29,
+        "name": "Dahlia",
+        "description": "Dahlias are known for their large, intricate blooms that come in a variety of shapes and colors, including red, pink, yellow, and white. They are popular in floral arrangements and garden beds due to their bold appearance and long-lasting blooms. Dahlias symbolize elegance and dignity. Native to Mexico, dahlias thrive in sunny environments with well-drained soil. Their diverse flower forms and vibrant colors make them a favorite among gardeners and floral enthusiasts.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 30,
+        "name": "Orchid",
+        "description": "Orchids are exotic flowers known for their unique, intricate blooms and wide range of colors and patterns. They are often used in floral arrangements and as houseplants due to their elegant appearance and long-lasting blooms. Orchids symbolize love, beauty, and strength. Native to tropical and subtropical regions, orchids thrive in warm, humid environments and well-drained soil. Their distinctive flowers and diverse species make them a popular choice for collectors and floral designers.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 31,
+        "name": "Lily",
+        "description": "Lilies are elegant flowers known for their large, trumpet-shaped blooms and sweet fragrance. They come in a variety of colors including white, pink, orange, and yellow. Lilies symbolize purity and refined beauty. Native to the Northern Hemisphere, these flowers thrive in well-drained soil and full to partial sunlight. They are commonly used in floral arrangements and are popular in gardens for their striking appearance and pleasant scent.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 32,
+        "name": "Poppy",
+        "description": "Poppies are known for their delicate, paper-like petals and vibrant colors including red, orange, and purple. They are often associated with remembrance and peace. Native to Europe and Asia, poppies thrive in sunny locations and well-drained soil. They are admired for their bright, striking blooms and are commonly used in gardens and floral arrangements to add a splash of color.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 33,
+        "name": "Delphinium",
+        "description": "Delphiniums are tall, stately flowers known for their vibrant spikes of blue, purple, and white blooms. They are often used as a backdrop in garden beds due to their impressive height and striking colors. Delphiniums symbolize lightness and levity. Native to the Northern Hemisphere, these flowers thrive in cooler climates with well-drained soil and plenty of sunlight.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 34,
+        "name": "Cherry Blossom",
+        "description": "Cherry blossoms are renowned for their delicate, pink flowers that bloom in spring. They are a symbol of the fleeting nature of life and are celebrated in festivals around the world. Native to East Asia, cherry blossoms thrive in temperate climates and well-drained soil. Their brief but stunning display makes them a cherished addition to gardens and public spaces.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 35,
+        "name": "Geranium",
+        "description": "Geraniums are popular flowering plants known for their bright, round blooms and pleasant fragrance. They come in a variety of colors including red, pink, and white. Geraniums symbolize comfort and positive emotions. Native to South Africa, these flowers thrive in sunny locations and well-drained soil. They are commonly used in garden beds and containers for their vibrant colors and ease of care.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 36,
+        "name": "Helenium",
+        "description": "Helenium, also known as sneezeweed, is known for its daisy-like blooms that come in warm, autumnal colors such as yellow, orange, and red. They are often used to add a splash of color to gardens in late summer and fall. Heleniums symbolize endurance and cheerfulness. Native to North America, they thrive in sunny locations with well-drained soil and are valued for their long-lasting blooms.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 37,
+        "name": "Freesia",
+        "description": "Freesias are admired for their sweet fragrance and trumpet-shaped blooms that come in a variety of colors including white, yellow, pink, and purple. They are often used in bouquets and floral arrangements due to their pleasant scent and vibrant colors. Freesias symbolize friendship and trust. Native to South Africa, these flowers thrive in well-drained soil and sunny to partially shaded environments.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 38,
+        "name": "Bird of Paradise",
+        "description": "The Bird of Paradise flower is known for its exotic appearance and striking, colorful blooms that resemble the plumage of a bird. It comes in vibrant shades of orange, blue, and green. Symbolizing joy and paradise, this flower is native to South Africa and thrives in warm, sunny environments. It is often used as a focal point in garden designs and floral arrangements for its dramatic and tropical look.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 39,
+        "name": "Clematis",
+        "description": "Clematis is a versatile flowering plant known for its large, showy blooms that come in a variety of colors including purple, pink, white, and blue. It is often used to cover trellises and arbors, adding vertical interest to garden designs. Clematis symbolizes mental beauty and ingenuity. Native to Europe and Asia, clematis plants thrive in well-drained soil and can adapt to both sunny and shaded environments.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 40,
+        "name": "Pansy",
+        "description": "Pansies are known for their large, colorful blooms that come in a range of hues including purple, yellow, and blue. They are often used in garden beds and containers due to their cheerful appearance and resilience. Pansies symbolize loving thoughts and remembrance. Native to Europe and Asia, pansies thrive in cooler climates and well-drained soil, making them a popular choice for spring and fall gardens.",
+        "image_url": "https://images.pexels.com/photos/462402/pexels-photo-462402.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+]
