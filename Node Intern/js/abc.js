@@ -75,7 +75,6 @@
 //     console.log(results);
 //   });
 
-
 // const promise1 = Promise.reject("First");
 // const promise2 = Promise.reject("Second");
 // const promise3 = Promise.reject("Third");
