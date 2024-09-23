@@ -79,6 +79,7 @@
 // const promise2 = Promise.reject("Second");
 // const promise3 = Promise.reject("Third");
 
+
 // Promise.any([promise1, promise2, promise3])
 //   .then((result) => {
 //     // console.log(result); 
