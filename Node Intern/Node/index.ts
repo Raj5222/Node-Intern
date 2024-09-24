@@ -11,13 +11,30 @@ mongoose.connect(
   .catch((err) => console.error("MongoDB Error:", err));
 
   //PostGres Connection
+// const postgres = new Pool({
+//   user: "node_testing_user",
+//   host: "dpg-crmkmvi3esus73fv1520-a.singapore-postgres.render.com",
+//   database: "node_testing",
+//   password: "JY0lqAMh1z2CYOpCYe74m9i9ALtnHhc8",
+//   port: 5432,
+//   ssl: true
+// });
+
 const postgres = new Pool({
-  connectionString: `postgresql://node_testing_user:JY0lqAMh1z2CYOpCYe74m9i9ALtnHhc8@dpg-crmkmvi3esus73fv1520-a.singapore-postgres.render.com/node_testing?ssl=true`,
+  user: "Raj0206",
+  host: "localhost",
+  database: "node_intern",
+  password: "0206",
+  port: 6784,
+  // ssl: true,
 });
 
-postgres.connect().then(() => {
+postgresql: postgres
+  .connect()
+  .then(() => {
     console.log("Connected to PostgreSQL");
-  }).catch((err) => {
+  })
+  .catch((err) => {
     console.error("PostgreSQL Error:", err);
   });
 
