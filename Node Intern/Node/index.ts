@@ -1,14 +1,13 @@
 import http from "http";
-import mongoose from "mongoose";
 import { Pool } from "pg";
 import { ServerResponse } from "http";
 
 // MongoDB Connection
-mongoose.connect(
-    "mongodb+srv://Raj0206:02062001@cluster0.eepco.mongodb.net"
-  )
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("MongoDB Error:", err));
+// mongoose.connect(
+//     "mongodb+srv://Raj0206:02062001@cluster0.eepco.mongodb.net"
+//   )
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch((err) => console.error("MongoDB Error:", err));
 
   //PostGres Connection
 // const postgres = new Pool({
