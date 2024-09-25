@@ -8,7 +8,7 @@ import { generateToken } from "../jwt";
 const userModel = new UserModel(pool);
 
 export const createUser = async (req: Request, res: Response) => {
-  const { name, email, password} = req.body;
+  const { name, email, password } = req.body;
   try {
     const user = await userModel.createUser(name, email, password);
     res.status(201).json(user);
@@ -26,7 +26,7 @@ export const loginUser = async (req: Request, res: Response) => {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    const isMatch = await hashPassword === hashPassword(password);
+    const isMatch = await hashPassword(password);
     if (!isMatch) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
